@@ -1,0 +1,13 @@
+<div th:fragment="info">
+    <div class="p-3 mb-3 bg-light rounded">
+        <h4 class="font-italic">Filter articles by tag</h4>
+        <form action="/" method="post">
+            <p class="mb-0"> Choose the tag: </p>
+            <select name="tag">
+                <option th:each="tagOpt : ${T(dataart.vrn.javaschool.NewsArticles.entities.tags.Tag).values()}"
+                        th:value="${tagOpt}" th:text="${tagOpt.code}"></option>
+            </select><br><br>
+            <button type="submit" class="btn btn-success">Filter</button>
+        </form>
+    </div>
+</div>

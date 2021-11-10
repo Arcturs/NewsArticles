@@ -1,0 +1,11 @@
+<div th:fragment="paging">
+    <div class="pagination">
+        <ul th:if="${articlesPage.totalPages > 0}">
+            <li th:each="pageNum: ${pages}"
+                th:class="${pageNum == articlesPage.number} ? active">
+                <a th:href="@{'/?page=' + ${pageNum}}"
+                   th:text="${pageNum + 1}" class="alert alert-info mt-2"/>
+            </li>
+        </ul>
+    </div>
+</div>
